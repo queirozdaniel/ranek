@@ -1,5 +1,7 @@
 <template>
-  <div class="home"></div>
+  <section>
+    <h1>Compre ou Venda</h1>
+  </section>
 </template>
 
 <script>

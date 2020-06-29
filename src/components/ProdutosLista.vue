@@ -9,7 +9,9 @@
           <p class="descricao">{{produto.descricao}}</p>
         </router-link>
       </div>
+      <ProdutosPagina :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina" />
     </div>
+
     <div class="sem-resultados" v-else-if="produtos && produtos.length === 0">
       <p>Busca sem resultados. Tente buscar outro termo.</p>
     </div>
@@ -17,15 +19,19 @@
 </template>
 
 <script>
+import ProdutosPagina from "./ProdutosPagina";
 import { api } from "../services";
 import { serialize } from "../helpers";
 
 export default {
   name: "ProdutosLista",
+  components: {
+    ProdutosPagina
+  },
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 9,
+      produtosPorPagina: 5,
       produtosTotal: 0
     };
   },

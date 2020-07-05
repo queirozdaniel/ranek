@@ -23,9 +23,9 @@ export default {
     compra() {
       return {
         comprador_id: this.usuario.email,
-        vendedor_id: this.produto.vendedor_id,
+        vendedor_id: this.produto.usuario_id,
         produto: this.produto,
-        enderece: {
+        endereco: {
           cep: this.usuario.cep,
           rua: this.usuario.rua,
           numero: this.usuario.numero,
@@ -57,8 +57,9 @@ export default {
     finalizarCompra() {
       if (this.$store.state.login) {
         this.criarTransacao();
+      } else {
+        this.criarUsuario();
       }
-      this.criarUsuario();
     }
   }
 };

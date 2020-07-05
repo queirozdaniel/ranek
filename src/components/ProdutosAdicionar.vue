@@ -7,7 +7,7 @@
     <label for="fotos">Fotos</label>
     <input type="file" name="fotos" id="fotos" ref="fotos" />
     <label for="descricao">Descrição</label>
-    <textarea name="descricao" id="descricao"></textarea>
+    <textarea name="descricao" id="descricao" v-model="produto.descricao"></textarea>
     <input class="btn" type="button" value="Adicionar Produto" @click.prevent="adicionarProduto" />
   </form>
 </template>
@@ -22,7 +22,8 @@ export default {
         nome: "",
         preco: "",
         descricao: "",
-        fotos: null
+        fotos: null,
+        vendido: "false"
       }
     };
   },
